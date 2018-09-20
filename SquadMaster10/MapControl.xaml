@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="SquadMaster10.MapControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SquadMaster10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="32"
+    d:DesignWidth="860">
+
+    <Grid Width="860">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" x:Name="stacker" Orientation="Horizontal" HorizontalAlignment="Right">
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <TextBlock x:Name="scorelabel" Text="" FontSize="24" ></TextBlock>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

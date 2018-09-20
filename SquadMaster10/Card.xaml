@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="SquadMaster10.Card"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="TheCard" Width="Auto">
+    <UserControl.Resources>
+        <Storyboard x:Name="Wobble">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationZ)" Storyboard.TargetName="img">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="img">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="img">
+                <EasingDoubleKeyFrame KeyTime="0" Value="25">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Image Grid.Row="1" Grid.Column="0" x:Name="img" Source="{Binding Path=CardSource,ElementName=TheCard}" Margin="0,0,10,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image.Projection>
+                <PlaneProjection RotationX="15" RotationY="-10" />
+            </Image.Projection>
+        </Image>
+        <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel x:Name="SquadStacker" Orientation="Vertical" ScrollViewer.VerticalScrollMode="Auto"></StackPanel>
+        </ScrollViewer>
+        
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=CardTitleShadowTextStyle}" Margin="20,29,0,0" TextWrapping="NoWrap" Text="{Binding Path=CardName,ElementName=TheCard}" VerticalAlignment="Top" Height="100" />
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=CardTitleTextStyle}" Margin="17,26,0,0" TextWrapping="NoWrap" Text="{Binding Path=CardName,ElementName=TheCard}" VerticalAlignment="Top" Height="100" />
+        <TextBlock Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=CardPageTextStyle}" Margin="0,29,15,0" TextWrapping="NoWrap" Text="{Binding Path=CardPage,ElementName=TheCard}" VerticalAlignment="Top" Height="95" />
+    </Grid>
+</UserControl>

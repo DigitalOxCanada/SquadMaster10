@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="SquadMaster10.SquadSingle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SquadMaster10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="TheSoldier">
+
+    <Border x:Name="theblock" BorderThickness="3" BorderBrush="Gray" Background="DarkSlateGray" Padding="1" Margin="0,0,0,5" Width="200">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="ImageSquadSingle" Source="{Binding ImageSoldier,ElementName=TheSoldier}" Grid.Row="0" HorizontalAlignment="Center" Stretch="Uniform" />
+            <Button Grid.Row="0" x:Name="btnDamagePlus" Background="#FFFD3030" Click="btnDamagePlus_Click" HorizontalAlignment="Left" Padding="1" Height="32" Width="53">Hit +1</Button>
+            <Button Grid.Row="0" x:Name="btnDamageMinus" Background="#FF30A0FD" Click="btnDamageMinus_Click" HorizontalAlignment="Right" Padding="1" Height="32" Width="63">Heal +1</Button>
+            <StackPanel Grid.Row="0" x:Name="damageCanvas" Orientation="Horizontal" VerticalAlignment="Bottom" />
+        </Grid>
+    </Border>
+</UserControl>

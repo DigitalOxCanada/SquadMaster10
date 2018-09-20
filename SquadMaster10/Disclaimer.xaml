@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="SquadMaster10.DisclaimerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SquadMaster10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="500">
+
+    <Grid Width="500" Height="400" Background="Brown">
+        <StackPanel>
+            <Canvas Height="360" Width="500">
+                <TextBlock Height="360" Width="500" TextWrapping="Wrap">
+                    		<Run Text="Disclaimer " />
+        	            	<LineBreak />
+        		            <Run Text="We are not affiliated with Wizards of the Coard(R) or Hasbro(R) and do not represent the company or product(s)." />
+                </TextBlock>
+            </Canvas>
+            <Button HorizontalAlignment="Right" Content="Accept" ></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

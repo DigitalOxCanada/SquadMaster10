@@ -1,0 +1,17 @@
+﻿<Application
+    x:Class="SquadMaster10.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SquadMaster10"
+    RequestedTheme="Dark">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Common/StandardStyles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <x:String x:Key="AppName">Squad Master HS</x:String>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

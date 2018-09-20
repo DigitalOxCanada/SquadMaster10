@@ -1,0 +1,17 @@
+﻿<UserControl
+    x:Class="SquadMaster10.RoundMarker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SquadMaster10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="66"
+    d:DesignWidth="115" x:Name="RoundMarkerCtl">
+
+    <Canvas>
+        <Image x:Name="thearrow" Source="Assets/RoundMarkerArrowR.png" Stretch="None"  IsHitTestVisible="False" Canvas.Left="51" Canvas.Top="18" />
+        <Image x:Name="TheButtonControl" Source="Assets/RoundMarkerButton.png" Stretch="Uniform" Width="64" Tapped="TheButtonTapped" />
+        <TextBlock x:Name="thenumber" Text="16" FontSize="32" FontWeight="Normal" Foreground="White" Canvas.Top="15" Canvas.Left="14" HorizontalAlignment="Center" IsHitTestVisible="False"></TextBlock>
+    </Canvas>
+</UserControl>
